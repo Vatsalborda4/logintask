@@ -145,13 +145,16 @@ img {
   color: white;
   border: 1.6px solid #FFFFFF
 } */
-.login_outer .form-outer .form-inner .form-item form .login-bottom .checkbox input{
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	background: linear-gradient(to right, #00AEEF, #007FC4);
-	border-radius: 6px;
-	border: 1px;
+.login_outer .form-outer .form-inner .form-item form .login-bottom .checkbox input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  appearance: none; 
+  -webkit-appearance: none;
+  outline: none;
+ background: linear-gradient(to right, #00AEEF, #007FC4);
+
 }
 .login_outer .form-outer .form-inner .form-item form .login-bottom .checkbox label {
 	display: block;
