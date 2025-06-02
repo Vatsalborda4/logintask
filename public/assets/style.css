@@ -113,12 +113,6 @@ img {
 	margin-bottom: 30px;
 	background-color: #F9FAFB;
 }
-.login_outer .form-outer .form-inner .form-item form .input-wrapper .icon-svg {
-  position: absolute;
-  top: 44%;
-  left: 12px;
-  transform: translateY(-50%);
-}
 .login_outer .form-outer .form-inner .form-item form .input-wrapper .icon-svg1 {
   position: absolute;
   top: 50%;
@@ -145,16 +139,32 @@ img {
   color: white;
   border: 1.6px solid #FFFFFF
 } */
-.login_outer .form-outer .form-inner .form-item form .login-bottom .checkbox input[type="checkbox"] {
+.login_outer .form-outer .form-inner .form-item form .login-bottom .checkbox input{
+  /* appearance: none;
+  -webkit-appearance: none; */
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
   width: 24px;
   height: 24px;
-  border: 1px solid #D1D5DB;
-  border-radius: 6px;
-  appearance: none; 
-  -webkit-appearance: none;
-  outline: none;
- background: linear-gradient(to right, #00AEEF, #007FC4);
-
+}
+.login_outer .form-outer .form-inner .form-item form .login-bottom .checkbox input:checked {
+  background: linear-gradient(to right, #00AEEF, #007FC4);
+  color: #FFFFFF;
+}
+.login_outer .form-outer .form-inner .form-item form .login-bottom .checkbox input:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 .login_outer .form-outer .form-inner .form-item form .login-bottom .checkbox label {
 	display: block;
@@ -185,6 +195,7 @@ img {
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 20px;
+	cursor: pointer;
 }	
 /* end login page  */
 
@@ -390,12 +401,6 @@ img {
   border-radius: 12px;
   background-color: #F9FAFB;
   border: 1px solid #E5E7EB
-}
-.reset_outer .reset-form-outer .reset-form-inner .reset-form-item .input-wrapper .icon-svg {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
 }
 .reset_outer .reset-form-outer .reset-form-inner .reset-form-item .input-wrapper .icon-svg1 {
   position: absolute;

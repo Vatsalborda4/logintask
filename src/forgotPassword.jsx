@@ -14,7 +14,6 @@ const ForgotPassword = () => {
         />
         <div className="forgot-form-outer">
           <div className="forgot-form-inner">
-          
             <div className="forgot-form-item">
               <p className="icon">
                 <svg
