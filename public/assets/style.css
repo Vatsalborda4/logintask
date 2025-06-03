@@ -716,6 +716,7 @@ border: 1.6px solid #FFFFFF;
 	border-radius: 18px;
 	border: none;
 	background-color: #fff;
+	box-shadow: 0px 3px 4px 0px #00000008;
 }
 .flex.justify-between.items-center.mb-2 {
 	display: flex;
@@ -725,7 +726,6 @@ border: 1.6px solid #FFFFFF;
 	border-bottom: 1px solid #F1F1F4;
 	padding: 26px;
 	margin-bottom: 30px;
-	box-shadow: 0px 3px 4px 0px #00000008;
 }
 .text-sm.font-medium {
 	display: block;
