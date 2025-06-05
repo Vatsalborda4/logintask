@@ -1349,6 +1349,7 @@ border: 1.6px solid #FFFFFF;
 }
 .dashboard.blurred > *:not(.lead-details) {
   opacity: 50%;
+  background-color: #071437;
 }
 .dashboard .lead-details {
   opacity: 1;
