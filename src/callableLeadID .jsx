@@ -620,7 +620,7 @@ const CallableLeadID = () => {
           <div className="lead-details">
             <div className="lead-details-header">
               <h2>Lead Information</h2>
-              <span className="icon">
+              <span className="icon" onClick={() => setshowLeadDeatils(false)}>
                 <svg
                   width="24"
                   height="24"

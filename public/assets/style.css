@@ -995,6 +995,7 @@ border: 1.6px solid #FFFFFF;
 	font-size: 14px;
 	line-height: 14px;
 	color: #252F4A;
+	cursor: pointer;
 }
 .dashboard .dashboard-right .dashbord-right-bottom .leadid-bottom table .checkbox-lead {
 	width: 60px;
@@ -1310,6 +1311,10 @@ border: 1.6px solid #FFFFFF;
 	line-height: 20px;
 	color: #071437;
 }
+.dashboard .lead-details .lead-details-header .icon {
+	display: block;
+	cursor: pointer;
+}
 .dashboard .lead-details .table-inner {
 	padding-top: 20px;
 }	
@@ -1350,7 +1355,5 @@ border: 1.6px solid #FFFFFF;
 .dashboard.blurred > *:not(.lead-details) {
   opacity: 50%;
 }
-.dashboard .lead-details {
-  opacity: 1;
-}
+
 /* end pop up  */
