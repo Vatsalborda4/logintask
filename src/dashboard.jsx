@@ -28,7 +28,7 @@ const Dashboard = () => {
   const [showNotifications, setShowNotifications] = useState(false);
   return (
     <>
-      <div>
+      <div className="dashboard">
         <Header />
         <div className="dashboard-right">
           <div className="dashbord-right-top">
