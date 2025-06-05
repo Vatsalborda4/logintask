@@ -86,6 +86,8 @@ const LeadID = () => {
   const [checked, setChecked] = useState([]);
   const [lastChecked, setLastChecked] = useState(null);
   const [search, setSearch] = useState("");
+    const [showNotifications, setShowNotifications] = useState(false);
+  
 
   const handleCheck = (e, idx) => {
     let updated = [...checked];

@@ -86,6 +86,8 @@ const TotalSales  = () => {
   const [checked, setChecked] = useState([]);
   const [lastChecked, setLastChecked] = useState(null);
   const [search, setSearch] = useState("");
+    const [showNotifications, setShowNotifications] = useState(false);
+  
 
   const handleCheck = (e, idx) => {
     let updated = [...checked];
@@ -127,7 +129,7 @@ const TotalSales  = () => {
             </span>
             <div className="text">Total Sales</div>
             <div className="icon">
-              <div className="bell">
+              <div className="bell" onClick={() => setShowNotifications(!showNotifications)}>
                 <svg
                   width="40"
                   height="40"
@@ -168,6 +170,44 @@ const TotalSales  = () => {
                   </defs>
                 </svg>
               </div>
+              {showNotifications && (
+    <div className="notification-text">
+                <h2>Notifications</h2>
+                <ul>
+                  <li className="notification-item">
+                    <h3>Optio eum repudiandae harum.</h3>
+                    <p>
+                      Dolores nostrum rerum dignissimos molestiae. Eligendi
+                      neque vel deleniti nisi ut sunt et.
+                    </p>
+                    <span>6 mins ago</span>
+                  </li>
+                  <li className="notification-item">
+                    <h3>Dicta perspiciatis in.</h3>
+                    <p>
+                      Qui aperiam voluptatem aspernatur quia veniam quos neque
+                      rerum.
+                    </p>
+                    <span>30 mins ago</span>
+                  </li>
+                  <li className="notification-item2">
+                    <h3>Nisi nihil ipsa maiores illo quo harum nisi.</h3>
+                    <p>
+                      Provident quam nisi. Dolorem totam quia sed quos aut
+                      aliquam accusantium.
+                    </p>
+                    <span>1 hour ago</span>
+                  </li>
+                  <li className="notification-item2">
+                    <h3>Doloremque ut distinctio est omnis odio.</h3>
+                    <p>Consectetur architecto a. Et facilis velit quos corporis qui. Ullam et illo.</p>
+                    <span>
+                      2 weeks ago
+                    </span>
+                  </li>
+                </ul>
+              </div>
+)}
               <div className="cover-image">
                 <img
                   src="assets\images\cover.jpg"
