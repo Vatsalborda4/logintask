@@ -484,6 +484,7 @@ border: 1.6px solid #FFFFFF;
 .dashboard .dashboard-left .dashboard-menu{
 	display: block;
 	padding: 0 25px 30px 25px;
+	cursor: pointer;
 	:hover{
 		background-color: #F5F5F5CC;
 		border-radius: 12px;
@@ -583,6 +584,7 @@ border: 1.6px solid #FFFFFF;
 	display: block;
 	width: 40px;
 	height: 40px;
+	margin-right: 15px;
 }
 .dashboard .dashbord-right-top .icon .cover-image {
 	display: inline-block;
@@ -638,7 +640,7 @@ border: 1.6px solid #FFFFFF;
 	justify-content: space-between;
 }
 .dashboard .dashboard-right .dashbord-right-bottom .text .date-lead {
-	width: 180px ;
+	width: 180px;
 }
 .dashboard .dashboard-right .dashbord-right-bottom .text .date .date-inner {
 	display: flex;
@@ -841,10 +843,13 @@ border: 1.6px solid #FFFFFF;
 	display: flex;
 	align-items: center;
 }
-/* .dashboard .dashboard-right .dashbord-right-bottom .leadid-bottom table {
-	border: 1px solid #F1F1F4;
-
-} */
+.dashboard .dashboard-right .dashbord-right-bottom .leadid-bottom table .table-th {
+	display: flex;
+	align-items: center;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .leadid-bottom table .table-th span {
+	margin-left: 4px;
+}
 .dashboard .dashboard-right .dashbord-right-bottom .leadid-bottom table th {
 	border: 1px solid #F1F1F4;
 	padding: 0 20px;
@@ -961,3 +966,210 @@ border: 1.6px solid #FFFFFF;
 	font-weight: 500;
 }
 /* end leadid page  */
+
+/* start settings page  */
+.dashboard .dashboard-right .dashbord-right-bottom .profile-photo {
+	display: flex;
+	align-content: center;
+	height: 122px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-photo .profile-cover-photo {
+	display: block;
+	width: 122px;
+	height: 122px;
+	border-radius: 20px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-photo .profile-cover-photo .profile-cover {
+	border-radius: 20px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-photo .profile-text {
+	display: block;
+	margin: 18px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-photo .profile-text .profile-button {
+	display: flex;
+	align-items: center;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-photo .profile-text .profile-button .profile-btn {
+	width: 192px;
+	height: 44px;
+	display: block;
+	border: none;
+	border-radius: 10px;
+	background: linear-gradient(to right, #00AEEF, #007FC4);
+	margin-right: 8px;
+	padding: 8px 24px;
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-photo .profile-text .profile-button input {
+	display: block;
+	height: 44px;
+	border: none;
+	padding: 8px 36px;
+	border-radius: 10px;
+	background-color: #F5F5F5;
+	color: #99A1B7;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-photo .profile-text p {
+	display: block;
+	margin: 20px 0 0 0;
+	padding: 0 4px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 100%;
+	color: #4B5675;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .border {
+	display: block;
+	border-bottom: 1px solid #071437;
+	opacity: 10%;
+	margin: 30px 0;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-info {
+	display: block;
+	height: 124px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-info h2 {
+	display: block;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #071437;
+	margin-bottom: 30px;	
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-info .profile-info-input {
+	display: flex;
+	align-items: center;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-info .profile-info-input label {
+	display: block;
+	width: 150px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #1F2937;
+	margin-bottom: 6px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-info .profile-info-input input{
+	display: block;
+	width: 470px;
+	height: 52px;
+	background-color: #F9FAFB;
+	border-radius: 12px;
+	padding: 6px 14px;
+	border: none;
+	color: #6B7280;
+	font-weight: 400;	
+	font-size: 16px;			
+	line-height: 24px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-info .profile-info-input .name1 {
+	margin-right: 40px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security {
+	display: block;
+	margin: 0 0 30px 0;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security h2 {
+	display: block;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #071437;
+	margin-bottom: 30px;	
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-security-input {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-security-input .password1 {
+	margin-right: 40px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-security-input label {
+	display: block;
+	width: 150px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #1F2937;
+	margin-bottom: 6px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-security-input .input-wrapper {
+	position: relative;
+	margin-bottom: 30px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-security-input .input-wrapper .reset-emailtext {
+	width: 470px;
+	height: 52px;
+	padding: 6px 14px;
+	border-radius: 12px;
+	background-color: #F9FAFB;
+	border: 1px solid #E5E7EB;	
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-security-input .input-wrapper .icon-svg1 {
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%);
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security h3 {
+	display: block;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #071437;
+	margin-bottom: 10px;	
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .password-requirements {
+	display: block;
+	margin-bottom: 30px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .password-requirements li {
+	color: #6B7280;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	list-style: disc;
+	margin-left: 25px;
+	padding: 5px 0;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-submit {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-submit .profile-btn {
+	display: block;
+	background: linear-gradient(121.72deg, #00AEEF 0%, #007FC4 100%);
+	border-radius: 10px;
+	width: 160px;
+	height: 44px;
+	padding: 8px 24px;
+	color: #FFFFFF;
+	border: none;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	margin-right: 8px;
+}
+.dashboard .dashboard-right .dashbord-right-bottom .profile-security .profile-submit input {
+	display: block;
+	border-radius: 10px;
+	width: 160px;
+	height: 44px;
+	border: none;
+	padding: 8px 36px;
+	background-color: #F5F5F5;
+	color: #99A1B7;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px; 
+}
+/* end settings page  */
