@@ -90,9 +90,6 @@ const leadData = {
 };
 
 const LeadID = () => {
-  const [showCalendar, setShowCalendar] = useState(false);
-  const [startDate, setStartDate] = useState(new Date("2025-01-20"));
-  const [endDate, setEndDate] = useState(new Date("2025-02-09"));
 
   const [checked, setChecked] = useState([]);
   const [lastChecked, setLastChecked] = useState(null);
@@ -248,7 +245,6 @@ const LeadID = () => {
               </div>
                <div
                   className="date date-lead"
-                  onClick={() => setShowCalendar(!showCalendar)}
                 >
                   <div className="date-inner">
                     <span className="date-icon">
@@ -271,11 +267,7 @@ const LeadID = () => {
                       </svg>
                     </span>
                     <span className="date-text">
-                      {" "}
-                      {startDate.toLocaleDateString("en-US", {
-                        month: "long",
-                        year: "numeric",
-                      })}
+                      September, 2024
                     </span>
                   </div>
                   <div className="date-arrow">
@@ -295,20 +287,6 @@ const LeadID = () => {
                     </svg>
                   </div>
                 </div>
-              {showCalendar && (
-                <div className="calendar-popup">
-                  <p>Select Start Date:</p>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                  />
-                  <p>Select End Date:</p>
-                  <DatePicker
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                  />
-                </div>
-              )}
             </div>
             <div className="leadid-bottom">
               <div className="search-bar">
@@ -344,7 +322,6 @@ const LeadID = () => {
                 </div>
                 <div
                   className="date"
-                  onClick={() => setShowCalendar(!showCalendar)}
                 >
                   <div className="date-inner">
                     <span className="date-icon">
@@ -367,11 +344,7 @@ const LeadID = () => {
                       </svg>
                     </span>
                     <span className="date-text">
-                      {" "}
-                      {startDate.toLocaleDateString("en-US", {
-                        month: "long",
-                        year: "numeric",
-                      })}
+                      September, 2024
                     </span>
                   </div>
                   <div className="date-arrow">

@@ -82,28 +82,23 @@ const leadData = {
   Id: "S-004",
   "First Name": "David",
   "Last Name": "Martinez",
-  Product : "Premium Package",
-  Amount : "$2,450.00"
+  Product: "Premium Package",
+  Amount: "$2,450.00",
 };
-const TotalSales  = () => {
-  const [showCalendar, setShowCalendar] = useState(false);
-  const [startDate, setStartDate] = useState(new Date("2025-01-20"));
-  const [endDate, setEndDate] = useState(new Date("2025-02-09"));
-
+const TotalSales = () => {
   const [checked, setChecked] = useState([]);
   const [lastChecked, setLastChecked] = useState(null);
   const [search, setSearch] = useState("");
   const [showNotifications, setShowNotifications] = useState(false);
   const [showLeadDeatils, setshowLeadDeatils] = useState(false);
-  
+
   useEffect(() => {
-          if (showLeadDeatils) {
-            document.body.style.overflow = "hidden";
-          } else {
-            document.body.style.overflow = "";
-          }
-        }, [showLeadDeatils]);
-  
+    if (showLeadDeatils) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [showLeadDeatils]);
 
   const handleCheck = (e, idx) => {
     let updated = [...checked];
@@ -187,43 +182,44 @@ const TotalSales  = () => {
                 </svg>
               </div>
               {showNotifications && (
-    <div className="notification-text">
-                <h2>Notifications</h2>
-                <ul>
-                  <li className="notification-item">
-                    <h3>Optio eum repudiandae harum.</h3>
-                    <p>
-                      Dolores nostrum rerum dignissimos molestiae. Eligendi
-                      neque vel deleniti nisi ut sunt et.
-                    </p>
-                    <span>6 mins ago</span>
-                  </li>
-                  <li className="notification-item">
-                    <h3>Dicta perspiciatis in.</h3>
-                    <p>
-                      Qui aperiam voluptatem aspernatur quia veniam quos neque
-                      rerum.
-                    </p>
-                    <span>30 mins ago</span>
-                  </li>
-                  <li className="notification-item2">
-                    <h3>Nisi nihil ipsa maiores illo quo harum nisi.</h3>
-                    <p>
-                      Provident quam nisi. Dolorem totam quia sed quos aut
-                      aliquam accusantium.
-                    </p>
-                    <span>1 hour ago</span>
-                  </li>
-                  <li className="notification-item2">
-                    <h3>Doloremque ut distinctio est omnis odio.</h3>
-                    <p>Consectetur architecto a. Et facilis velit quos corporis qui. Ullam et illo.</p>
-                    <span>
-                      2 weeks ago
-                    </span>
-                  </li>
-                </ul>
-              </div>
-)}
+                <div className="notification-text">
+                  <h2>Notifications</h2>
+                  <ul>
+                    <li className="notification-item">
+                      <h3>Optio eum repudiandae harum.</h3>
+                      <p>
+                        Dolores nostrum rerum dignissimos molestiae. Eligendi
+                        neque vel deleniti nisi ut sunt et.
+                      </p>
+                      <span>6 mins ago</span>
+                    </li>
+                    <li className="notification-item">
+                      <h3>Dicta perspiciatis in.</h3>
+                      <p>
+                        Qui aperiam voluptatem aspernatur quia veniam quos neque
+                        rerum.
+                      </p>
+                      <span>30 mins ago</span>
+                    </li>
+                    <li className="notification-item2">
+                      <h3>Nisi nihil ipsa maiores illo quo harum nisi.</h3>
+                      <p>
+                        Provident quam nisi. Dolorem totam quia sed quos aut
+                        aliquam accusantium.
+                      </p>
+                      <span>1 hour ago</span>
+                    </li>
+                    <li className="notification-item2">
+                      <h3>Doloremque ut distinctio est omnis odio.</h3>
+                      <p>
+                        Consectetur architecto a. Et facilis velit quos corporis
+                        qui. Ullam et illo.
+                      </p>
+                      <span>2 weeks ago</span>
+                    </li>
+                  </ul>
+                </div>
+              )}
               <div className="cover-image">
                 <img
                   src="assets\images\cover.jpg"
@@ -239,10 +235,7 @@ const TotalSales  = () => {
                 <h2>Total Sales</h2>
                 <p>Central Hub for Personal Customization</p>
               </div>
-              <div
-                className="date date-lead"
-                onClick={() => setShowCalendar(!showCalendar)}
-              >
+              <div className="date date-lead">
                 <div className="date-inner">
                   <span className="date-icon">
                     <svg
@@ -263,13 +256,7 @@ const TotalSales  = () => {
                       />
                     </svg>
                   </span>
-                  <span className="date-text">
-                    {" "}
-                    {startDate.toLocaleDateString("en-US", {
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </span>
+                  <span className="date-text">September, 2024</span>
                 </div>
                 <div className="date-arrow">
                   <svg
@@ -288,20 +275,6 @@ const TotalSales  = () => {
                   </svg>
                 </div>
               </div>
-              {showCalendar && (
-                <div className="calendar-popup">
-                  <p>Select Start Date:</p>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                  />
-                  <p>Select End Date:</p>
-                  <DatePicker
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                  />
-                </div>
-              )}
             </div>
             <div className="leadid-bottom">
               <div className="search-bar">
@@ -335,10 +308,7 @@ const TotalSales  = () => {
                     </svg>
                   </span>
                 </div>
-                <div
-                  className="date"
-                  onClick={() => setShowCalendar(!showCalendar)}
-                >
+                <div className="date">
                   <div className="date-inner">
                     <span className="date-icon">
                       <svg
@@ -359,13 +329,7 @@ const TotalSales  = () => {
                         />
                       </svg>
                     </span>
-                    <span className="date-text">
-                      {" "}
-                      {startDate.toLocaleDateString("en-US", {
-                        month: "long",
-                        year: "numeric",
-                      })}
-                    </span>
+                    <span className="date-text">September, 2024</span>
                   </div>
                   <div className="date-arrow">
                     <svg
@@ -395,118 +359,118 @@ const TotalSales  = () => {
                       <input type="checkbox" />
                     </th>
                     <th>
-                     <div className="table-th">
-                       Lead ID              
-                      <span>
-                        <svg
-                          width="15"
-                          height="14"
-                          viewBox="0 0 15 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
-                            fill="#78829D"
-                          />
-                          <path
-                            d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
-                            fill="#78829D"
-                          />
-                        </svg>
-                      </span>
-                     </div>
+                      <div className="table-th">
+                        Lead ID
+                        <span>
+                          <svg
+                            width="15"
+                            height="14"
+                            viewBox="0 0 15 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
+                              fill="#78829D"
+                            />
+                            <path
+                              d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
+                              fill="#78829D"
+                            />
+                          </svg>
+                        </span>
+                      </div>
                     </th>
                     <th>
                       <div className="table-th">
                         First Name
-                      <span>
-                        <svg
-                          width="15"
-                          height="14"
-                          viewBox="0 0 15 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
-                            fill="#78829D"
-                          />
-                          <path
-                            d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
-                            fill="#78829D"
-                          />
-                        </svg>
-                      </span>
+                        <span>
+                          <svg
+                            width="15"
+                            height="14"
+                            viewBox="0 0 15 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
+                              fill="#78829D"
+                            />
+                            <path
+                              d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
+                              fill="#78829D"
+                            />
+                          </svg>
+                        </span>
                       </div>
                     </th>
                     <th>
                       <div className="table-th">
                         Last Name
-                      <span>
-                        <svg
-                          width="15"
-                          height="14"
-                          viewBox="0 0 15 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
-                            fill="#78829D"
-                          />
-                          <path
-                            d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
-                            fill="#78829D"
-                          />
-                        </svg>
-                      </span>
+                        <span>
+                          <svg
+                            width="15"
+                            height="14"
+                            viewBox="0 0 15 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
+                              fill="#78829D"
+                            />
+                            <path
+                              d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
+                              fill="#78829D"
+                            />
+                          </svg>
+                        </span>
                       </div>
                     </th>
                     <th>
                       <div className="table-th">
                         Created
-                      <span>
-                        <svg
-                          width="15"
-                          height="14"
-                          viewBox="0 0 15 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
-                            fill="#78829D"
-                          />
-                          <path
-                            d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
-                            fill="#78829D"
-                          />
-                        </svg>
-                      </span>
+                        <span>
+                          <svg
+                            width="15"
+                            height="14"
+                            viewBox="0 0 15 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
+                              fill="#78829D"
+                            />
+                            <path
+                              d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
+                              fill="#78829D"
+                            />
+                          </svg>
+                        </span>
                       </div>
                     </th>
                     <th>
                       <div className="table-th">
-                         Action
-                      <span>
-                        <svg
-                          width="15"
-                          height="14"
-                          viewBox="0 0 15 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
-                            fill="#78829D"
-                          />
-                          <path
-                            d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
-                            fill="#78829D"
-                          />
-                        </svg>
-                      </span>
+                        Action
+                        <span>
+                          <svg
+                            width="15"
+                            height="14"
+                            viewBox="0 0 15 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M7.5 12.25C7.325 12.25 7.20833 12.1916 7.09167 12.075L4.175 9.15829C3.94167 8.92496 3.94167 8.57496 4.175 8.34163C4.40833 8.10829 4.75833 8.10829 4.99167 8.34163L7.5 10.85L10.0083 8.34163C10.2417 8.10829 10.5917 8.10829 10.825 8.34163C11.0583 8.57496 11.0583 8.92496 10.825 9.15829L7.90833 12.075C7.79167 12.1916 7.675 12.25 7.5 12.25Z"
+                              fill="#78829D"
+                            />
+                            <path
+                              d="M4.58333 5.83333C4.40833 5.83333 4.29167 5.775 4.175 5.65833C3.94167 5.425 3.94167 5.075 4.175 4.84167L7.09167 1.925C7.325 1.69167 7.675 1.69167 7.90833 1.925L10.825 4.84167C11.0583 5.075 11.0583 5.425 10.825 5.65833C10.5917 5.89167 10.2417 5.89167 10.0083 5.65833L7.5 3.15L4.99167 5.65833C4.875 5.775 4.75833 5.83333 4.58333 5.83333Z"
+                              fill="#78829D"
+                            />
+                          </svg>
+                        </span>
                       </div>
                     </th>
                   </tr>
@@ -529,7 +493,9 @@ const TotalSales  = () => {
                       <td>{lead.lastName}</td>
                       <td>{lead.created}</td>
                       <td>
-                        <span onClick={() => setshowLeadDeatils(!showLeadDeatils)}>
+                        <span
+                          onClick={() => setshowLeadDeatils(!showLeadDeatils)}
+                        >
                           <svg
                             width="40"
                             height="40"

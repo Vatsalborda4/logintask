@@ -22,9 +22,6 @@ const data = [
 ];
 
 const Dashboard = () => {
-  const [showCalendar, setShowCalendar] = useState(false);
-  const [startDate, setStartDate] = useState(new Date("2025-01-20"));
-  const [endDate, setEndDate] = useState(new Date("2025-02-09"));
   const [showNotifications, setShowNotifications] = useState(false);
   return (
     <>
@@ -145,7 +142,6 @@ const Dashboard = () => {
               </div>
               <div
                 className="date"
-                onClick={() => setShowCalendar(!showCalendar)}
               >
                 <span className="date-icon">
                   <svg
@@ -166,24 +162,10 @@ const Dashboard = () => {
                     />
                   </svg>
                 </span>
-                <span className="date-text">{startDate.toDateString()}</span>
+                <span className="date-text">Jan 20, 2025</span>
                 <span className="date-text">-</span>
-                <span className="date-text">{endDate.toDateString()}</span>
+                <span className="date-text">Feb 09, 2025</span>
               </div>
-              {showCalendar && (
-                <div className="calendar-popup">
-                  <p>Select Start Date:</p>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                  />
-                  <p>Select End Date:</p>
-                  <DatePicker
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                  />
-                </div>
-              )}
             </div>
             <div className="dashbord-inner">
               <div className="item item-1">
