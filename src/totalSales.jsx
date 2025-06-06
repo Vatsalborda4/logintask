@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Header from "./header";
@@ -78,6 +78,13 @@ const leads = [
   },
 ];
 
+const leadData = {
+  Id: "S-004",
+  "First Name": "David",
+  "Last Name": "Martinez",
+  Product : "Premium Package",
+  Amount : "$2,450.00"
+};
 const TotalSales  = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [startDate, setStartDate] = useState(new Date("2025-01-20"));
@@ -86,7 +93,16 @@ const TotalSales  = () => {
   const [checked, setChecked] = useState([]);
   const [lastChecked, setLastChecked] = useState(null);
   const [search, setSearch] = useState("");
-    const [showNotifications, setShowNotifications] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [showLeadDeatils, setshowLeadDeatils] = useState(false);
+  
+  useEffect(() => {
+          if (showLeadDeatils) {
+            document.body.style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = "";
+          }
+        }, [showLeadDeatils]);
   
 
   const handleCheck = (e, idx) => {
@@ -513,7 +529,7 @@ const TotalSales  = () => {
                       <td>{lead.lastName}</td>
                       <td>{lead.created}</td>
                       <td>
-                        <span>
+                        <span onClick={() => setshowLeadDeatils(!showLeadDeatils)}>
                           <svg
                             width="40"
                             height="40"
@@ -599,6 +615,57 @@ const TotalSales  = () => {
             </div>
           </div>
         </div>
+        {showLeadDeatils && <div className="dashboard-overlay"></div>}
+        {showLeadDeatils && (
+          <div className="lead-details lead-details-sales">
+            <div className="lead-details-header">
+              <h2>Total Sales (S-004)</h2>
+              <span className="icon" onClick={() => setshowLeadDeatils(false)}>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.8995 4.56747C18.3229 4.14422 19.0094 4.14414 19.4327 4.56747C19.856 4.9908 19.8559 5.67729 19.4327 6.10067L13.5333 12.0001L19.4327 17.8995C19.8559 18.3229 19.856 19.0094 19.4327 19.4327C19.0094 19.856 18.3229 19.8559 17.8995 19.4327L12.0001 13.5333L6.10067 19.4327C5.67729 19.8559 4.9908 19.856 4.56747 19.4327C4.14414 19.0094 4.14422 18.3229 4.56747 17.8995L10.4669 12.0001L4.56747 6.10067C4.14422 5.67729 4.14414 4.9908 4.56747 4.56747C4.9908 4.14414 5.67729 4.14422 6.10067 4.56747L12.0001 10.4669L17.8995 4.56747Z"
+                    fill="#071437"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div className="table-inner">
+              <table
+                style={{
+                  borderCollapse: "collapse",
+                  width: "100%",
+                }}
+              >
+                <tbody>
+                  {Object.entries(leadData).map(([key, value]) => (
+                    <tr key={key} className="row">
+                      <th>{key}</th>
+                      <td>
+                        {key === "Offer_url" ? (
+                          <a
+                            href={value}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {value}
+                          </a>
+                        ) : (
+                          value
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

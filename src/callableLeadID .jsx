@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Header from "./header";
 
 const leadData = {
   Id: "L-004",
-  "First Name": "Macky",
-  "Last Name": "Hoo",
+  "First Name": "David",
+  "Last Name": "Martinez",
   "Phone Number": "(555) 456-7890",
-  "Email Address": "mackyhoo@example.com",
+  "Email Address": "david.martinez@example.com",
   Created: "2025-05-01",
   Country: "USA",
   Offer_url: "https://heidi.name",
@@ -117,6 +117,14 @@ const CallableLeadID = () => {
     }
     setChecked(updated);
   };
+
+  useEffect(() => {
+    if (showLeadDeatils) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [showLeadDeatils]);
 
   return (
     <>
@@ -616,10 +624,11 @@ const CallableLeadID = () => {
             </div>
           </div>
         </div>
+        {showLeadDeatils && <div className="dashboard-overlay"></div>}
         {showLeadDeatils && (
           <div className="lead-details">
             <div className="lead-details-header">
-              <h2>Lead Information</h2>
+              <h2>Callable Lead ID (L-004)</h2>
               <span className="icon" onClick={() => setshowLeadDeatils(false)}>
                 <svg
                   width="24"
@@ -643,26 +652,24 @@ const CallableLeadID = () => {
                 }}
               >
                 <tbody>
-                  {Object.entries(leadData).map(
-                    ([key, value]) => (
-                      <tr key={key} className="row">
-                        <th>{key}</th>
-                        <td>
-                          {key === "Offer_url" ? (
-                            <a
-                              href={value}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {value}
-                            </a>
-                          ) : (
-                            value
-                          )}
-                        </td>
-                      </tr>
-                    )
-                  )}
+                  {Object.entries(leadData).map(([key, value]) => (
+                    <tr key={key} className="row">
+                      <th>{key}</th>
+                      <td>
+                        {key === "Offer_url" ? (
+                          <a
+                            href={value}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {value}
+                          </a>
+                        ) : (
+                          value
+                        )}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Header from "./header";
@@ -78,6 +78,17 @@ const leads = [
   },
 ];
 
+const leadData = {
+  Id: "L-004",
+  "First Name": "Macky",
+  "Last Name": "Hoo",
+  "Phone Number": "(555) 456-7890",
+  "Email Address": "mackyhoo@example.com",
+  Created: "2025-05-01",
+  Country: "USA",
+  Offer_url: "https://heidi.name",
+};
+
 const LeadID = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [startDate, setStartDate] = useState(new Date("2025-01-20"));
@@ -86,8 +97,16 @@ const LeadID = () => {
   const [checked, setChecked] = useState([]);
   const [lastChecked, setLastChecked] = useState(null);
   const [search, setSearch] = useState("");
-    const [showNotifications, setShowNotifications] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);  
+  const [showLeadDeatils, setshowLeadDeatils] = useState(false);
   
+      useEffect(() => {
+        if (showLeadDeatils) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      }, [showLeadDeatils]);
 
   const handleCheck = (e, idx) => {
     let updated = [...checked];
@@ -129,7 +148,10 @@ const LeadID = () => {
             </span>
             <div className="text">Total Leads</div>
             <div className="icon">
-              <div className="bell">
+              <div
+                className="bell"
+                onClick={() => setShowNotifications(!showNotifications)}
+              >
                 <svg
                   width="40"
                   height="40"
@@ -170,6 +192,45 @@ const LeadID = () => {
                   </defs>
                 </svg>
               </div>
+              {showNotifications && (
+                <div className="notification-text">
+                  <h2>Notifications</h2>
+                  <ul>
+                    <li className="notification-item">
+                      <h3>Optio eum repudiandae harum.</h3>
+                      <p>
+                        Dolores nostrum rerum dignissimos molestiae. Eligendi
+                        neque vel deleniti nisi ut sunt et.
+                      </p>
+                      <span>6 mins ago</span>
+                    </li>
+                    <li className="notification-item">
+                      <h3>Dicta perspiciatis in.</h3>
+                      <p>
+                        Qui aperiam voluptatem aspernatur quia veniam quos neque
+                        rerum.
+                      </p>
+                      <span>30 mins ago</span>
+                    </li>
+                    <li className="notification-item2">
+                      <h3>Nisi nihil ipsa maiores illo quo harum nisi.</h3>
+                      <p>
+                        Provident quam nisi. Dolorem totam quia sed quos aut
+                        aliquam accusantium.
+                      </p>
+                      <span>1 hour ago</span>
+                    </li>
+                    <li className="notification-item2">
+                      <h3>Doloremque ut distinctio est omnis odio.</h3>
+                      <p>
+                        Consectetur architecto a. Et facilis velit quos corporis
+                        qui. Ullam et illo.
+                      </p>
+                      <span>2 weeks ago</span>
+                    </li>
+                  </ul>
+                </div>
+              )}
               <div className="cover-image">
                 <img
                   src="assets\images\cover.jpg"
@@ -473,7 +534,7 @@ const LeadID = () => {
                       <td>{lead.lastName}</td>
                       <td>{lead.created}</td>
                       <td>
-                        <span>
+                        <span onClick={() => setshowLeadDeatils(!showLeadDeatils)}>
                           <svg
                             width="40"
                             height="40"
@@ -556,6 +617,57 @@ const LeadID = () => {
             </div>
           </div>
         </div>
+          {showLeadDeatils && <div className="dashboard-overlay"></div>}
+        {showLeadDeatils && (
+          <div className="lead-details">
+            <div className="lead-details-header">
+              <h2>Lead ID (L-004)</h2>
+              <span className="icon" onClick={() => setshowLeadDeatils(false)}>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.8995 4.56747C18.3229 4.14422 19.0094 4.14414 19.4327 4.56747C19.856 4.9908 19.8559 5.67729 19.4327 6.10067L13.5333 12.0001L19.4327 17.8995C19.8559 18.3229 19.856 19.0094 19.4327 19.4327C19.0094 19.856 18.3229 19.8559 17.8995 19.4327L12.0001 13.5333L6.10067 19.4327C5.67729 19.8559 4.9908 19.856 4.56747 19.4327C4.14414 19.0094 4.14422 18.3229 4.56747 17.8995L10.4669 12.0001L4.56747 6.10067C4.14422 5.67729 4.14414 4.9908 4.56747 4.56747C4.9908 4.14414 5.67729 4.14422 6.10067 4.56747L12.0001 10.4669L17.8995 4.56747Z"
+                    fill="#071437"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div className="table-inner">
+              <table
+                style={{
+                  borderCollapse: "collapse",
+                  width: "100%",
+                }}
+              >
+                <tbody>
+                  {Object.entries(leadData).map(([key, value]) => (
+                    <tr key={key} className="row">
+                      <th>{key}</th>
+                      <td>
+                        {key === "Offer_url" ? (
+                          <a
+                            href={value}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {value}
+                          </a>
+                        ) : (
+                          value
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

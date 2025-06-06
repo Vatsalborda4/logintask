@@ -863,7 +863,7 @@ border: 1.6px solid #FFFFFF;
 .text-sm.border.rounded.p-1 {
 	display: block;
 	background-color: #FCFCFC;
-	border: 1px solid #DBDFE9;
+	border: 1px solid #DBDFE9 !important;
 	color: #252F4A;
 	font-weight: 400;
 	font-size: 11px;
@@ -872,6 +872,7 @@ border: 1.6px solid #FFFFFF;
 	width: 98px;
 	height: 30px;
 	padding: 8px 10px;
+	opacity: 100% !important;
 }
 .flex.h-screen.bg-gray-50 {
 	margin: 30px 0 0 0;
@@ -1285,7 +1286,7 @@ border: 1.6px solid #FFFFFF;
 
 /* start pop up  */
 .dashboard .lead-details {
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -1294,7 +1295,10 @@ border: 1.6px solid #FFFFFF;
 	border-radius: 26px;
 	padding: 28px 22px 40px 22px;
 	background-color: #FFFFFF;
-	z-index: 10;
+	z-index: 1000;
+}
+.dashboard .lead-details-sales {
+	height: 380px;
 }
 .dashboard .lead-details .lead-details-header {
 	display: flex;
@@ -1317,6 +1321,7 @@ border: 1.6px solid #FFFFFF;
 }
 .dashboard .lead-details .table-inner {
 	padding-top: 20px;
+	padding-left: 20px;
 }	
 .dashboard .lead-details table tr{
 	border-bottom: 1px solid #E9E9E9;
@@ -1352,8 +1357,10 @@ border: 1.6px solid #FFFFFF;
 	padding-left: 20px;
 	padding: 18px 0;
 }
-.dashboard.blurred > *:not(.lead-details) {
-  opacity: 50%;
+.dashboard-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(7, 20, 55, 0.6); 
+  z-index: 999;
+  width: 100%;
 }
-
-/* end pop up  */
